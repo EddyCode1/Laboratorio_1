@@ -1,0 +1,184 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #640a0a;
+    perspective: 2000px; 
+}
+
+.book {
+    width: 500px; 
+    height: 600px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+#l1 { z-index: 3; }
+#l2 { z-index: 2; }
+#l3 { z-index: 1; }
+
+.leaf {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-style: preserve-3d;
+    transform-origin: left;
+    transition: transform 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+    /*z-index: 1;*/
+}
+
+.flipped {
+    transform: rotateY(-180deg);
+}
+
+.page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Oculta la espalda de la cara */
+    padding: 30px;
+    box-sizing: border-box;
+    background: #f8f5f0;
+    box-shadow: inset 0px 0px 20px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Cara trasera de cada hoja */
+.page.back {
+    transform: rotateY(180deg); /* Volteada por defecto */
+    border-left: 1px solid #ddd;
+}
+
+.cover {
+    background: #000000;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.flipped {
+    transform: rotateY(-180deg);
+}
+
+.video-screen {
+    position: relative;
+    width: 100%;
+    height: 55%; 
+    overflow: hidden;
+    border: 3px solid #710505; 
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.3); 
+    margin-bottom: 20px;
+}
+
+.video-screen video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    filter: brightness(0.7); 
+}
+
+.video-screen2 {
+    position: relative;
+    left: 20%;
+    width: 60%;
+    height: 30%; 
+    overflow: hidden;
+    border: 3px solid #710505; 
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.3); 
+    margin-bottom: 20px;
+}
+
+.video-screen2 video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    filter: brightness(0.7); 
+}
+
+.video-screen3 {
+    position: relative;
+    left: 15%;
+    width: 70%;
+    height: 40%; 
+    overflow: hidden;
+    border: 3px solid #710505; 
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.3); 
+    margin-bottom: 20px;
+}
+
+.video-screen3 video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    color: #f8f5f0;
+    text-align: center;
+    width: 100%;
+    pointer-events: none; /* Permite que el clic pase a través del texto al libro */
+}
+
+.text h1 {
+    font-size: 3rem;
+    margin: 0;
+    text-shadow: 2px 2px 15px rgba(0,0,0,0.9); /* Sombra para leer bien sobre el video */
+}
+
+.imagenes-capitulo {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    margin-top: 25px;
+}
+
+.imagenes-capitulo img {
+    position: absolute;
+    width: 180px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease;
+}
+
+/* Imagen 1 */
+.imagenes-capitulo img:nth-child(1) {
+    top: -18%; 
+    left: 12%;
+    transform: rotate(-8deg);
+    z-index: 1;
+}
+
+/* Imagen 2 */
+.imagenes-capitulo img:nth-child(2) {
+    left: 28%;
+    transform: rotate(3deg);
+    z-index: 2;
+}
+
+/* Imagen 3 */
+.imagenes-capitulo img:nth-child(3) {
+    left: 60%;
+    transform: rotate(10deg);
+    z-index: 3;
+}
+
+/* Efecto hover (opcional, pero recomendado) */
+.imagenes-capitulo img:hover {
+    transform: scale(1.05) rotate(0deg);
+    z-index: 10;
+}
