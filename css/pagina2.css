@@ -1,0 +1,85 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #000000;
+    perspective: 2000px; 
+}
+
+.book {
+    width: 500px; 
+    height: 600px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+#l1 { z-index: 3; }
+#l2 { z-index: 2; }
+#l3 { z-index: 1; }
+
+.leaf {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-style: preserve-3d;
+    transform-origin: left;
+    transition: transform 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+    /*z-index: 1;*/
+}
+
+.flipped {
+    transform: rotateY(-180deg);
+}
+
+.page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Oculta la espalda de la cara */
+    padding: 30px;
+    box-sizing: border-box;
+    background: #ad9e8c;
+    box-shadow: inset 0px 0px 20px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Cara trasera de cada hoja */
+.page.back {
+    transform: rotateY(180deg); /* Volteada por defecto */
+    border-left: 1px solid #ddd;
+}
+
+.cover {
+    background: #7b0101;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.flipped {
+    transform: rotateY(-180deg);
+}
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    color: #f8f5f0;
+    text-align: center;
+    width: 100%;
+    pointer-events: none; /* Permite que el clic pase a través del texto al libro */
+}
+
+.text h1 {
+    font-size: 3rem;
+    margin: 0;
+    text-shadow: 2px 2px 15px rgba(0,0,0,0.9); /* Sombra para leer bien sobre el video */
+}
