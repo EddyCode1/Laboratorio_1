@@ -122,6 +122,43 @@ body {
     object-fit: cover; 
 }
 
+.video-screen4 {
+    position: relative;
+    left: 3%;
+    width: 40%;
+    height: 25%; 
+    overflow: hidden;
+    border: 3px solid #710505; 
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.3); 
+    margin-bottom: 20px;
+}
+
+.video-screen4 video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.video-screen5 {
+    position: relative;
+    left: 55%;
+    margin-top: -36%;
+    width: 40%;
+    height: 25%; 
+    overflow: hidden;
+    border: 3px solid #710505; 
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.3); 
+    margin-bottom: 20px;
+}
+
+.video-screen5 video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
 .text {
     position: absolute;
     top: 50%;
@@ -157,8 +194,9 @@ body {
 
 /* Imagen 1 */
 .imagenes-capitulo img:nth-child(1) {
-    top: -18%; 
+    top: -15%; 
     left: 12%;
+    width: 38%;
     transform: rotate(-8deg);
     z-index: 1;
 }
@@ -181,4 +219,88 @@ body {
 .imagenes-capitulo img:hover {
     transform: scale(1.05) rotate(0deg);
     z-index: 10;
+}
+
+
+.imagenes-capitulo4 {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    margin-top: 25px;
+}
+
+.imagenes-capitulo4 img {
+    position: absolute;
+    width: 180px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease;
+}
+
+/* Imagen 1 */
+.imagenes-capitulo4 img:nth-child(1) {
+    top: -15%; 
+    left: 12%;
+    width: 38%;
+    transform: rotate(-8deg);
+    z-index: 1;
+}
+
+/* Imagen 2 */
+.imagenes-capitulo4 img:nth-child(2) {
+    left: 28%;
+    transform: rotate(3deg);
+    z-index: 2;
+}
+
+/* Imagen 3 */
+.imagenes-capitulo4 img:nth-child(3) {
+    left: 60%;
+    transform: rotate(10deg);
+    z-index: 3;
+}
+
+.imagenes-capitulo4 img:nth-child(4) {
+    margin-top: 20%;
+    left: 60%;
+    width: 37%;
+    transform: rotate(10deg);
+    z-index: 3;
+}
+
+.imagenes-capitulo4 img:nth-child(5) {
+    margin-top: 20%;
+    left: 28%;
+    width: 40%;
+    transform: rotate(6deg);
+    z-index: 2;
+}
+
+.imagenes-capitulo4 img:nth-child(6) {
+     top: 30%; 
+    left: 12%;
+    width: 40%;
+    transform: rotate(-8deg);
+    z-index: 1;
+}
+/* Efecto hover (opcional, pero recomendado) */
+.imagenes-capitulo4 img:hover {
+    transform: scale(1.05) rotate(0deg);
+    z-index: 10;
+}
+
+.imagenes-final {
+    position: relative;
+    left: 30%;
+    width: 100%;
+    height: 220px;
+    margin-top: 25px;
+}
+
+.imagenes-final img {
+    position: absolute;
+    width: 180px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease;
 }
