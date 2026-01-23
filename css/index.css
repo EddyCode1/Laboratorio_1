@@ -1,0 +1,95 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #4e0000ee; 
+    font-family: 'Montserrat', sans-serif;
+}
+
+.main-header {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.logo-lab {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    color: #ffffff;
+}
+
+
+.bento-menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 250px 250px;
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+.card {
+    text-decoration: none;
+    border-radius: 30px; 
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.card-content h2 {
+    color: white;
+    font-size: 1.8rem;
+}
+
+.card-content span {
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
+
+.f1-card {
+    grid-row: span 2;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), 
+                url("../images/max_in.png") center/cover no-repeat;
+    background-color: #e10600; 
+}
+
+.bio-card {
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)),
+                url('../images/bio.png') center/cover no-repeat;
+    background-color: #555;
+}
+
+.school-card {
+    background: linear-gradient(rgba(20, 39, 78, 0.4), rgba(20, 39, 78, 0.8)),
+                url('../images/fk_index.png') center/cover no-repeat;
+    background-color: #14274e; 
+}
+
+@media (max-width: 600px) {
+    .bento-menu {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    .f1-card {
+        grid-row: span 1;
+        height: 300px;
+    }
+}

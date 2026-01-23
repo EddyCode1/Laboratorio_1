@@ -304,3 +304,49 @@ body {
     box-shadow: 0 10px 20px rgba(0,0,0,0.4);
     transition: transform 0.3s ease;
 }
+
+.regreso {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    z-index: 100;
+}
+
+.btn-regresar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #1f1f1f; 
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 8px; 
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    border-left: 5px solid #e10600; 
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.f1-icon {
+    font-size: 1.2rem;
+    filter: grayscale(1); 
+    transition: 0.3s;
+}
+
+.btn-regresar:hover {
+    background-color: #e10600; 
+    transform: skewX(-10deg); 
+    box-shadow: 0 6px 20px rgba(225, 6, 0, 0.4);
+}
+
+.btn-regresar:hover .f1-icon {
+    filter: grayscale(0); 
+    transform: scale(1.2);
+}
+
+.btn-regresar:hover .text {
+    letter-spacing: 1px;
+}
